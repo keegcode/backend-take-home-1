@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - API exceptions with default set
 - Web API server builder
 - Default API schema
+### Changed
+- Configuration files for knex and eslint
 
 ## [0.0.1] - 2022-06-21
 ### Added

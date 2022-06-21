@@ -1,0 +1,8 @@
+# Configutation Files
+.env
+
+# IDE
+.idea
+
+# npm
+node_modules

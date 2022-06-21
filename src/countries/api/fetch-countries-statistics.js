@@ -1,6 +1,6 @@
 export default {
     type: 'cron',
-    cron: '0 0 * * *',
+    cron: '*/10 * * * *',
     async handler() {
         const countries = await this.db('countries');
         await Promise.all(countries.map((async (country) => {
@@ -10,6 +10,7 @@ export default {
                 body: JSON.stringify({ code: country.code })
             });
             if (statusCode !== 200) {
+                this.logger.error(new Error(`Countries API request has failed with code: ${statusCode} and response: ${await body.text()}`));
                 return;
             }
             const statistics = await this.db('statistics').where({ 'country_id': country.id }).first();
@@ -18,7 +19,7 @@ export default {
                 await this.db('statistics').insert({ 'country_id': country.id, recovered, deaths, confirmed });
                 return;
             }
-            await this.db('statistics').update({ recovered, deaths, confirmed }).where({ id: statistics.id });
+            await this.db('statistics').where({ id: statistics.id }).update({ recovered, deaths, confirmed });
         })));
     }
 };

@@ -4,7 +4,7 @@
   "engines": {
     "node": ">= 16.15.1"
   },
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "",
   "main": "src/main.js",
   "directories": {

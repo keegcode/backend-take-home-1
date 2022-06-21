@@ -1,0 +1,35 @@
+{
+  "name": "redberry-assignment",
+  "type": "module",
+  "engines": {
+    "node": ">= 16.15.1"
+  },
+  "version": "0.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "jest",
+    "format": "eslint --fix src lib utils"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^8.11.0",
+    "ajv-formats": "^2.1.1",
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^2.1.0",
+    "pg": "^8.7.3",
+    "pino": "^8.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "jest": "^28.1.1"
+  }
+}

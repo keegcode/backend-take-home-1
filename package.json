@@ -15,7 +15,9 @@
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "test:coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
     "format": "eslint --fix src lib utils",
-    "format:db": "eslint --fix database"
+    "format:db": "eslint --fix database",
+    "migrate": "knex migrate:latest",
+    "seed": "knex seed:run"
   },
   "author": "",
   "license": "ISC",
@@ -31,6 +33,7 @@
     "node-cron": "^3.0.1",
     "pg": "^8.7.3",
     "pino": "^8.0.0",
+    "swagger-ui-express": "^4.4.0",
     "undici": "^5.5.1",
     "uuid": "^8.3.2"
   },

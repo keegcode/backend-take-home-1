@@ -1,6 +1,6 @@
 export default {
     type: 'cron',
-    cron: '*/10 * * * *',
+    cron: '0 0 * * *',
     async handler() {
         const countries = await this.db('countries');
         await Promise.all(countries.map((async (country) => {

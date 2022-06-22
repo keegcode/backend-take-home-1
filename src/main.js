@@ -30,3 +30,8 @@ process.once('SIGINT', async () => {
     await api.stop({ reason: 'SIGINT' });
     process.exit(0);
 });
+
+process.once('SIGTERM', async () => {
+    await api.stop({ reason: 'SIGTERM' });
+    process.exit(0);
+});
